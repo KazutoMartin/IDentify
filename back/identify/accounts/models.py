@@ -12,7 +12,7 @@ class Profile(models.Model):
     github = models.OneToOneField(_("Github account"),Github, on_delete=models.CASCADE)
     linkedin = models.OneToOneField(_("LinkedIn account"),LinkedIn, on_delete=models.CASCADE)
     created_at = models.DataTimeField(_('created at'), default=timezone.now)
-    lastmodified = models.DateTimeField(_('last modified'),auto_now=True)
+    last_modified = models.DateTimeField(_('last modified'),auto_now=True)
     def __str__(self):
         return self.user.username
 
