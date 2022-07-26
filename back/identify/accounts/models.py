@@ -6,6 +6,30 @@ from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
+
+
+class Google(models.Model):
+    first_name = models.CharField(_("First name"), max_length=50)
+    last_name = models.CharField(_("Last name"), max_length=50)
+    email = models.EmailField(_("Email"), max_length=254, unique=True)
+    profile_pic = models.URLField(_("Profile Picture"), max_length=200, blank=True, null=True)
+    google_id = models.CharField(_("Client ID"), max_length=50, unique=True)
+    token_id = models.CharField(_("Token ID"), max_length=50, unique=True)
+    access_token = models.CharField(_("Access ID"), max_length=50, unique=True)
+    phone_number = models.PhoneNumberField(_("Phone Number"), blank=True, null=True)
+    birthday = models.DateField(_("Birthday"), blank=True, null=True)
+
+    # more fields will be added ...
+
+
+
+
+class Github(models.Model):
+    pass
+
+class LinkedIn(models.Model):
+    pass
+
 class Profile(models.Model):
     user = models.OneToOneField(_("User"),User, on_delete=models.CASCADE)
     google = models.OneToOneField(_("Google account"),Google, on_delete=models.CASCADE)
@@ -24,12 +48,3 @@ def create_user_profile(sender, instance, created, **kwargs):
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
-
-class Google(models.Model):
-    pass
-
-class Github(models.Model):
-    pass
-
-class LinkedIn(models.Model):
-    pass
