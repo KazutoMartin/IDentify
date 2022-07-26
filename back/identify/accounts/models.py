@@ -25,7 +25,23 @@ class Google(models.Model):
 
 
 class Github(models.Model):
-    pass
+    account_id = models.BigIntegerField(_("Account ID"), primary_key=True)
+    node_id = models.CharField(_("Node ID"), max_length=50)
+    name = models.CharField(_("Name"), max_length=40)
+    twitter_username = models.CharField(_("Twitter Username"), max_length=50, blank=True, null=True)
+    location = models.CharField(_("Location"), max_length=200)
+    hireable = models.BooleanField(_("Hireable"))
+    email = models.EmailField(_("Email"), max_length=254)
+    avatar_url = models.URLField(_("Avatar"), max_length=200)
+    bio = models.TextField(_("Bio"))
+    account_created = models.DateTimeField(_("Github Joined Date"))
+    followers_url = models.URLField(_("Followers Url"), max_length=200)
+    following_url = models.URLField(_("Following Url"), max_length=200)
+    created_at = models.DataTimeField(_('Created at'), default=timezone.now)
+    last_modified = models.DateTimeField(_('last modified'),auto_now=True)
+
+    def __str__(self):
+        return self.profile.user.username
 
 class LinkedIn(models.Model):
     pass
