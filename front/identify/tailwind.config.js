@@ -17,9 +17,13 @@ module.exports = {
     // },
     fontFamily: {
       logo: ["Inter", "sans-serif"],
+      font1: ["Open Sans", "sans-serif"],
+
       // serif: ["Merriweather", "serif"],
     },
-    extend: { colors: { background: "#26272F", sea: "#0E3EDA" } },
+    extend: {
+      colors: { background: "#26272F", sea: "#0E3EDA", mypurple: "#26E0ED" },
+    },
   },
   plugins: [],
 };
