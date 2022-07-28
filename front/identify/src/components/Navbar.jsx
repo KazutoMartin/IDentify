@@ -3,7 +3,7 @@ import logo from "../assets/logo.svg";
 
 function Navbar() {
   return (
-    <nav class="bg-transparent border-gray-200 sm:px-20 py-2.5 rounded md:px-10 h-1/6 items-center flex mx-10 sml:mx-2">
+    <nav class="bg-transparent border-gray-200 sm:px-20 py-2.5 rounded md:px-10 h-1/6 items-center flex mx-10 sml:mx-2 z-10">
       <div class="container flex flex-wrap justify-between items-center mx-auto">
         <a href="#" class="flex items-center">
           <img src={logo} class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
