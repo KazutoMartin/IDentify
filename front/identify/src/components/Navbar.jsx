@@ -14,13 +14,13 @@ function Navbar() {
         <div class="flex w-1/2 justify-end space-x-6">
           <button
             type="button"
-            class="sm:px-3 font-font1 font-thin text-white text-base rounded-xl px-5 py-2 border border-sea hover:bg-hoverbutton hover:text-black hover:font-thin hover:shadow-black hover:shadow-md hover:scale-110 hover:duration-300"
+            class="sml:px-3 font-font1 font-thin text-white text-base rounded-xl px-5 py-2 border border-sea hover:bg-hoverbutton hover:text-black hover:font-thin hover:shadow-black hover:shadow-md hover:scale-110 hover:duration-300"
           >
             Get started
           </button>
           <button
             type="button"
-            class="sm:px-3 font-font1 font-bold text-black text-base rounded-xl px-8 bg-white hover:shadow-black hover:shadow-md hover:scale-110 hover:duration-300"
+            class="sml:px-3 font-font1 font-bold text-black text-base rounded-xl px-8 bg-white hover:shadow-black hover:shadow-md hover:scale-110 hover:duration-300"
           >
             Sign in
           </button>
