@@ -22,7 +22,7 @@ module.exports = {
       // serif: ["Merriweather", "serif"],
     },
     extend: {
-      colors: { background: "#26272F", sea: "#0E3EDA", mypurple: "#26E0ED" },
+      colors: { background: "#26272F", sea: "#0E3EDA", hoverbutton: "#26E0ED" },
     },
   },
   plugins: [],
