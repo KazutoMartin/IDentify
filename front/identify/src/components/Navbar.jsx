@@ -3,7 +3,7 @@ import logo from "../assets/logo.svg";
 
 function Navbar() {
   return (
-    <nav class="bg-transparent border-gray-200 sm:px-20 py-2.5 rounded md:px-10 h-1/6 items-center flex">
+    <nav class="bg-transparent border-gray-200 sm:px-20 py-2.5 rounded md:px-10 h-1/6 items-center flex mx-10 sml:mx-2">
       <div class="container flex flex-wrap justify-between items-center mx-auto">
         <a href="#" class="flex items-center">
           <img src={logo} class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
@@ -14,13 +14,13 @@ function Navbar() {
         <div class="flex w-1/2 justify-end space-x-6">
           <button
             type="button"
-            class="sml:px-3 font-font1 font-thin text-white text-base rounded-xl px-5 py-2 border border-sea hover:bg-hoverbutton hover:text-black hover:font-thin hover:shadow-black hover:shadow-md hover:scale-110 hover:duration-300"
+            class="sml:px-3 sml:text-xs font-font1 font-thin text-white text-base rounded-xl px-5 py-2 border border-sea hover:bg-hoverbutton hover:text-black hover:font-thin hover:shadow-black hover:shadow-md hover:scale-110 hover:duration-300"
           >
             Get started
           </button>
           <button
             type="button"
-            class="sml:px-3 font-font1 font-bold text-black text-base rounded-xl px-8 bg-white hover:shadow-black hover:shadow-md hover:scale-110 hover:duration-300"
+            class="sml:px-3 sml:text-xs font-font1 font-bold text-black text-base rounded-xl px-8 bg-white hover:shadow-black hover:shadow-md hover:scale-110 hover:duration-300"
           >
             Sign in
           </button>
