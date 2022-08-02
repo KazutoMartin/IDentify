@@ -5,6 +5,8 @@ module.exports = {
     fontFamily: {
       logo: ["Inter", "sans-serif"],
       font1: ["Open Sans", "sans-serif"],
+      title: ["Rajdhani", "sans-serif"],
+
 
       // serif: ["Merriweather", "serif"],
     },
