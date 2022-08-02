@@ -16,7 +16,7 @@ class Google(models.Model):
     google_id = models.CharField(_("Client ID"), max_length=50, unique=True)
     token_id = models.CharField(_("Token ID"), max_length=50, unique=True)
     access_token = models.CharField(_("Access ID"), max_length=50, unique=True)
-    phone_number = models.PhoneNumberField(_("Phone Number"), blank=True, null=True)
+    phone_number = models.CharField(_("Phone Number"), blank=True, null=True, max_length=20)
     birthday = models.DateField(_("Birthday"), blank=True, null=True)
 
     # more fields will be added ...
@@ -37,7 +37,7 @@ class Github(models.Model):
     account_created = models.DateTimeField(_("Github Joined Date"))
     followers_url = models.URLField(_("Followers Url"), max_length=200)
     following_url = models.URLField(_("Following Url"), max_length=200)
-    created_at = models.DataTimeField(_('Created at'), default=timezone.now)
+    created_at = models.DateTimeField(_('Created at'), default=timezone.now)
     last_modified = models.DateTimeField(_('last modified'),auto_now=True)
 
     def __str__(self):
@@ -47,11 +47,11 @@ class LinkedIn(models.Model):
     pass
 
 class Profile(models.Model):
-    user = models.OneToOneField(_("User"),User, on_delete=models.CASCADE)
-    google = models.OneToOneField(_("Google account"),Google, on_delete=models.CASCADE)
-    github = models.OneToOneField(_("Github account"),Github, on_delete=models.CASCADE)
-    linkedin = models.OneToOneField(_("LinkedIn account"),LinkedIn, on_delete=models.CASCADE)
-    created_at = models.DataTimeField(_('created at'), default=timezone.now)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name=_("User"), null=True)
+    google = models.OneToOneField(Google, on_delete=models.CASCADE, verbose_name=_("Google account"), null=True)
+    github = models.OneToOneField(Github, on_delete=models.CASCADE, verbose_name=_("Github account"), null=True)
+    linkedin = models.OneToOneField(LinkedIn, on_delete=models.CASCADE, verbose_name=_("LinkedIn account"), null=True)
+    created_at = models.DateTimeField(_('created at'), default=timezone.now)
     last_modified = models.DateTimeField(_('last modified'),auto_now=True)
     def __str__(self):
         return self.user.username
