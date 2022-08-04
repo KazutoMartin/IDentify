@@ -4,6 +4,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
+from phonenumber_field.modelfields import PhoneNumberField
 
 # Create your models here.
 
@@ -16,7 +17,7 @@ class Google(models.Model):
     google_id = models.CharField(_("Client ID"), max_length=50, unique=True)
     token_id = models.CharField(_("Token ID"), max_length=50, unique=True)
     access_token = models.CharField(_("Access ID"), max_length=50, unique=True)
-    phone_number = models.CharField(_("Phone Number"), blank=True, null=True, max_length=20)
+    phone_number = PhoneNumberField(_("Phone Number"), blank=True, null=True, max_length=20)
     birthday = models.DateField(_("Birthday"), blank=True, null=True)
 
     # more fields will be added ...
