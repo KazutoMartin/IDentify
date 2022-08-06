@@ -1,7 +1,7 @@
 import React from "react";
 import { useRef } from "react";
 import Navbar from "../components/Navbar";
-import { motion, useDragControls } from "framer-motion";
+import { motion } from "framer-motion";
 import Lottie from "lottie-react";
 import googleLottie from "../assets/lottie_animations/google.json";
 import githubLottie from "../assets/lottie_animations/github.json";
@@ -48,7 +48,7 @@ function LandingPage() {
                       bounceStiffness: 10,
                       bounceDamping: 1,
                     }}
-                    whileHover={{ scale: 1.2 }}
+                    whileHover={{ scale: 1.2, cursor: "grabbing" }}
                     whileTap={{ scale: 1.3, cursor: "grabbing" }}
                     className="flex justify-center items-center"
                   >
@@ -70,7 +70,7 @@ function LandingPage() {
                       bounceStiffness: 10,
                       bounceDamping: 1,
                     }}
-                    whileHover={{ scale: 1.2 }}
+                    whileHover={{ scale: 1.2, cursor: "grabbing" }}
                     whileTap={{ scale: 1.3, cursor: "grabbing" }}
                     className="flex justify-center items-center"
                   >
@@ -92,7 +92,7 @@ function LandingPage() {
                       bounceStiffness: 5,
                       bounceDamping: 1,
                     }}
-                    whileHover={{ scale: 1.3 }}
+                    whileHover={{ scale: 1.3, cursor: "grabbing" }}
                     whileTap={{ scale: 1.4, cursor: "grabbing" }}
                     className="flex items-center justify-center bg-blue-300 rounded-lg p-7"
                   >
@@ -104,29 +104,44 @@ function LandingPage() {
                   </motion.div>
                 </div>
               </div>
-              <div className="flex w-full justify-center items-start z-10">
+              <motion.div
+                className="flex w-full justify-center items-start z-10"
+                initial={{ y: 100, opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ ease: "backInOut", duration: 2 }}
+              >
                 <p className="font-logo text-white text-2xl">
                   We gladly gather your information from these services and
                   introduce you better to other services!
                 </p>
-              </div>
+              </motion.div>
               <div className="flex w-full h-16 z-10 items-center mt-10">
-                <div className="flex w-1/2 justify-start h-full">
+                <motion.div
+                  className="flex w-1/2 justify-start h-full"
+                  initial={{ y: 150, opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ ease: "backInOut", duration: 3.75 }}
+                >
                   <button
                     type="button"
                     className="h-full w-2/3 sml:px-3 sml:text-xs font-font1 font-thin text-black text-lg rounded-xl px-5 py-2 border border-sea bg-hoverbutton hover:shadow-black hover:shadow-md hover:scale-110 hover:duration-300"
                   >
                     Get started
                   </button>
-                </div>
-                <div className="flex w-1/2 justify-start h-full">
+                </motion.div>
+                <motion.div
+                  className="flex w-1/2 justify-start h-full"
+                  initial={{ y: 150, opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ ease: "backInOut", duration: 3.75 }}
+                >
                   <button
                     type="button"
                     className="h-full w-2/3 sml:px-3 sml:text-xs font-font1 font-bold text-black text-lg rounded-xl px-8 bg-white hover:shadow-black hover:shadow-md hover:scale-110 hover:duration-300"
                   >
                     Sign in
                   </button>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
