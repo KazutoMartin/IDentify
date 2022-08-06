@@ -10,3 +10,7 @@ admin.site.register(models.Google)
 admin.site.register(models.Github)
 
 admin.site.register(models.LinkedIn)
+
+admin.site.register(models.Company)
+
+admin.site.register(models.Skill)
