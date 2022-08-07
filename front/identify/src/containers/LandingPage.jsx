@@ -124,7 +124,7 @@ function LandingPage() {
                 >
                   <button
                     type="button"
-                    className="h-full w-2/3 sml:px-3 sml:text-xs font-font1 font-thin text-black text-lg rounded-xl px-5 py-2 border border-sea bg-hoverbutton hover:shadow-black hover:shadow-md hover:scale-110 hover:duration-300"
+                    className="h-full w-2/3 sml:px-3 sml:text-xs font-font1 font-thin text-white text-lg rounded-xl px-5 py-2 border border-sea bg-black hover:shadow-black hover:shadow-md hover:scale-110 hover:duration-300"
                   >
                     Get started
                   </button>
