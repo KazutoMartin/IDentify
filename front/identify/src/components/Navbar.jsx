@@ -1,8 +1,11 @@
 import React from "react";
 import logo from "../assets/logo.svg";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
+  const navigate = useNavigate();
+
   return (
     <nav class="bg-transparent border-gray-200 sm:px-20 py-2.5 rounded md:px-10 h-1/6 items-center flex mx-10 sml:mx-2 z-10">
       <div class="container flex flex-wrap justify-between items-center mx-auto z-50">
@@ -20,6 +23,7 @@ function Navbar() {
         </motion.a>
         <div class="flex w-1/2 justify-end space-x-6">
           <motion.button
+            onClick={() => navigate("/sign-up")}
             initial={{ opacity: 0, scale: 0, y: -50 }}
             animate={{ x: 0, opacity: 1, scale: 1, y: 0 }}
             transition={{ ease: "backInOut", duration: 0.5 }}
@@ -28,6 +32,7 @@ function Navbar() {
             Get started
           </motion.button>
           <motion.button
+            onClick={() => navigate("/sign-in")}
             initial={{ opacity: 0, scale: 0, y: -50 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ ease: "backInOut", duration: 1 }}
