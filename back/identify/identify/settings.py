@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'accounts',
     'phonenumber_field',
     'django_extensions',
+    'Google',
+    'Github',
+    'LinkedIn',
 ]
 
 MIDDLEWARE = [

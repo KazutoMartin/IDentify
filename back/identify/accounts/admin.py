@@ -4,13 +4,3 @@ from . import models
 # use admin.site.register(models.modelname) to register
 
 admin.site.register(models.Profile)
-
-admin.site.register(models.Google)
-
-admin.site.register(models.Github)
-
-admin.site.register(models.LinkedIn)
-
-admin.site.register(models.Company)
-
-admin.site.register(models.Skill)
