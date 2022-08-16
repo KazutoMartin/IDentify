@@ -1,4 +1,3 @@
-import imp
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
@@ -15,9 +14,9 @@ from Github.models import Github
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name=_("User"), null=True)
-    google = models.OneToOneField(Google, on_delete=models.CASCADE, verbose_name=_("Google account"), null=True)
-    github = models.OneToOneField(Github, on_delete=models.CASCADE, verbose_name=_("Github account"), null=True)
-    linkedin = models.OneToOneField(LinkedIn, on_delete=models.CASCADE, verbose_name=_("LinkedIn account"), null=True)
+    google = models.OneToOneField(Google, on_delete=models.SET_NULL, verbose_name=_("Google account"), null=True)
+    github = models.OneToOneField(Github, on_delete=models.SET_NULL, verbose_name=_("Github account"), null=True)
+    linkedin = models.OneToOneField(LinkedIn, on_delete=models.SET_NULL, verbose_name=_("LinkedIn account"), null=True)
     created_at = models.DateTimeField(_('created at'), default=timezone.now)
     last_modified = models.DateTimeField(_('last modified'),auto_now=True)
     def __str__(self):
