@@ -9,9 +9,10 @@ import { useNavigate } from "react-router-dom";
 function LandingPage() {
   const navigate = useNavigate();
   return (
+    <>
     <motion.div
       exit={{ y: -1200, transition: { duration: 0.5 } }}
-      className="w-screen h-full overflow-hidden"
+      className="sml:hidden w-screen h-full overflow-hidden"
     >
       <div className="flex w-full h-full">
         <div className="flex justify-left items-center h-full w-1/6"></div>
@@ -143,6 +144,31 @@ function LandingPage() {
         <div className="flex justify-left items-center  h-full w-1/6"></div>
       </div>
     </motion.div>
+    <motion.div
+      exit={{ y: -1200, transition: { duration: 0.5 } }}
+      className="hidden sml:flex w-screen flex-col h-full overflow-hidden"
+      >
+  <div className="h-2/3 w-full flex justify-center items-center">
+  <motion.div
+            className="flex justify-center items-center"
+            initial={{ x: -700, opacity: 0, scale: 0.5, y: -500 }}
+            animate={{ x: 0, opacity: 1, scale: 1, y: -80 }}
+            transition={{ ease: "backInOut", duration: 2 }}
+          >
+            <h1 className="text-white font-title font-bold text-5xl">
+              We Care
+              <br />About <br /> Your <br />
+              Privacy
+            </h1>
+          </motion.div>
+  </div>
+  <div className="h-1/3 w-full"></div>
+  <div className="h-1/3 w-full"></div>
+
+
+
+    </motion.div>
+    </>
   );
 }
 
