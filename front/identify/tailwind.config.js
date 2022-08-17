@@ -14,6 +14,11 @@ module.exports = {
     screens: {
       sml: { max: "639px" },
       // => @media (max-width: 639px) { ... }
+      lgl: {max: "1200px"},
+      // => @media (max-width: 1200px) { ... }
+      mdl : {max: "920px"},
+      // => @media (max-width: 900px) { ... }
+
     },
 
     extend: {
