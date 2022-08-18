@@ -6,6 +6,7 @@ module.exports = {
       logo: ["Inter", "sans-serif"],
       font1: ["Open Sans", "sans-serif"],
       title: ["Rajdhani", "sans-serif"],
+      signfont: ["Poppins", "sans-serif"]
 
 
       // serif: ["Merriweather", "serif"],
