@@ -58,7 +58,7 @@ function SignInForm() {
           // show error function
           throw new Error("ACCESS DENIED ! 🔴");
         } else {
-          console.log("reques is ok");
+          console.log("request is ok");
           return response.json();
         }
       })
