@@ -98,7 +98,7 @@ function SignUpForm() {
 
   return (
     <motion.div 
-    initial={{ x: 0, opacity: 0, scale: 0.7, y: -500 }}
+    initial={{ x: 0, opacity: 0, scale: 0.7, y: 500 }}
     animate={{ x: 0, opacity: 1, scale: 1, y:0 }}
     transition={{ ease: "backInOut", duration: 2 }}
     className="flex mx-auto bg-white w-1/3 h-2/3 rounded-xl justify-center flex-col sml:w-5/6 sml:mt-5 mt-8 z-50">

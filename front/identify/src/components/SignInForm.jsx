@@ -20,6 +20,7 @@ function SignInForm() {
 
   const [Username, setUsername] = useState("");
   const [Password, setPassword] = useState("");
+  const [errorMessage, seterrorMessage] = useState("");
 
   const userLogin = (json_data) => {
     console.log("ACCESS GRANTED ! 🟢");
@@ -29,10 +30,6 @@ function SignInForm() {
 
     updateAccessToken(json_data.access);
     updateRefreshToken(json_data.refresh);
-  };
-
-  const showFormError = () => {
-    console.log("ACCESS DENIED ! 🔴");
   };
 
   const sendCredentials = () => {
@@ -55,7 +52,7 @@ function SignInForm() {
     fetch(process.env.REACT_APP_BACKEND_URL + "accounts/token/", requestOptions)
       .then((response) => {
         if (!response.ok) {
-          // show error function
+          seterrorMessage("Username or Password is not valid.")
           throw new Error("ACCESS DENIED ! 🔴");
         } else {
           console.log("request is ok");
@@ -68,7 +65,7 @@ function SignInForm() {
 
   return (
     <motion.div
-      initial={{ x: 0, opacity: 0, scale: 0.7, y: -500 }}
+      initial={{ x: 0, opacity: 0, scale: 0.7, y: 500 }}
       animate={{ x: 0, opacity: 1, scale: 1, y: 0 }}
       transition={{ ease: "backInOut", duration: 2 }}
       className="flex mx-auto bg-white w-1/3 h-1/2 rounded-xl justify-center flex-col sml:w-2/3 sml:mt-10 mt-20 z-50"
@@ -112,7 +109,12 @@ function SignInForm() {
             forgot password?
           </a>
         </div>
-      </div>
+      </div>      
+        {errorMessage && (
+          <div className="w-full h-1/6 flex justify-center items-start">
+          <p className="error text-red-600 text-sm"> {errorMessage} </p>
+          </div>
+        )}
       <div className="w-full h-1/6 flex justify-center items-center mb-4">
         <button
           type="submit"
