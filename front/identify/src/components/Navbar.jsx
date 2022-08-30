@@ -17,7 +17,10 @@ function Navbar() {
           class="flex items-center	"
         >
           <img src={logo} class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
-          <span class="self-center text-2xl font-logo text-white whitespace-nowrap">
+          <span
+            class="self-center text-2xl font-logo text-white whitespace-nowrap"
+            onClick={() => navigate("/")}
+          >
             IDENTIFY
           </span>
         </motion.a>
